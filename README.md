@@ -35,24 +35,23 @@ After extraction, the dataset files are located in the `ml-100k/` directory:
 ```plaintext
 movie-recommendation-system/
 │
-├── data/                  # Folder where the MovieLens dataset will be placed
-│   ├── ml-100k/           # Unzipped dataset folder
-│   │   ├── movies.csv     # Movie details (title, genres)
-│   │   ├── ratings.csv    # Ratings data (userId, movieId, rating, timestamp)
-│   │   ├── tags.csv       # User-generated tags
-│   │   ├── README.txt     # Dataset info
-│   └── README.md          
+├── data/                           # Folder where the MovieLens dataset will be placed
+│   ├── ml-latest-small/            # Unzipped dataset folder
+│   │   ├── movies.csv              # Movie details (title, genres)
+│   │   ├── ratings.csv             # Ratings data (userId, movieId, rating, timestamp)
+│   │   ├── tags.csv       	    # User-generated tags
+│   │   ├── README.txt     	    # Dataset info         
 │
-├── src/                   # Source code for the recommendation system
-│   ├── recommend.py       # Main script to generate movie recommendations
-│   ├── data_preprocessing.py # Preprocessing script (loading, cleaning data)
-│   ├── collaborative_filtering.py # User/Item-based CF implementations
-│   ├── svd_model.py       # SVD matrix factorization implementation
-│   └── evaluation.py      # RMSE evaluation and results
+├── src/                   	    # Source code for the recommendation system
+│   ├── recommend.py       	    # Main script to generate movie recommendations
+│   ├── data_preprocessing.py 	    # Preprocessing script (loading, cleaning data)
+│   ├── collaborative_filtering.py  # User/Item-based CF implementations
+│   ├── svd_model.py       	    # SVD matrix factorization implementation
+│   └── evaluation.py               # RMSE evaluation and results
 │
-├── requirements.txt       # Required Python libraries
-├── README.md              # Project details and instructions (this file)
-└── LICENSE                # MIT License
+├── requirements.txt                # Required Python libraries
+├── README.md              	    # Project details and instructions (this file)
+└── LICENSE                	    # MIT License
 ```
 
 ---
