@@ -1,33 +1,36 @@
 # PopcornPicks  
 
-A simple **Movie Recommendation System** built using Collaborative Filtering and Matrix Factorization (SVD). This project demonstrates the use of user-based & item-based filtering to provide personalized movie recommendations.  
+A **Movie Recommendation System** built using Collaborative Filtering and Matrix Factorization (SVD). This project provides personalized movie recommendations using **item-based filtering**, **SVD-based filtering**, and a **"Surprise Me" feature** for movie discovery. The system is deployed as an interactive **Streamlit app**.  
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)  
 ![License](https://img.shields.io/badge/License-MIT-green)  
 
 ---
 
-## Features  
-- **User-Based Collaborative Filtering** – Recommends movies based on similar users.  
-- **Item-Based Collaborative Filtering** – Recommends movies similar to a given movie.  
-- **Matrix Factorization (SVD)** – Uses dimensionality reduction to predict ratings.  
-- **Evaluation with RMSE** – Measures model accuracy.  
-- **Command-Line Interface** – Users can input a movie or user ID to get recommendations.  
+## ✨ Features  
+- **Item-Based Collaborative Filtering** – Recommends movies similar to a selected movie based on user preferences.  
+- **SVD (Singular Value Decomposition)** – Uses matrix factorization to predict movies you might enjoy.  
+- **"Surprise Me" Feature** – Pick a random movie from any genre or a specific genre.  
+- **Streamlit Web App** – A user-friendly UI for discovering new movies.  
+- **Movie Details** – Recommendations include genres and average ratings for better decision-making.  
 
 ---
 
 ## Dataset: MovieLens 100K  
-This project uses the **MovieLens 100K dataset** provided by [GroupLens](https://grouplens.org/datasets/movielens/100k/). It contains **100,000 ratings** from **943 users** on **1,682 movies**, with ratings ranging from **1 to 5 stars**.  
+This project uses the **MovieLens 100K dataset** from [GroupLens](https://grouplens.org/datasets/movielens/100k/). It contains:  
+- **100,000 ratings** from **943 users**  
+- **1,682 movies** with **genre labels**  
+- Ratings range from **1 to 5 stars**  
+
+---
 
 ### Dataset Files & Structure  
-After extraction, the dataset files are located in the `ml-100k/` directory:  
-
 | File           | Description |
 |---------------|------------|
-| `movies.csv`  | Contains **movieId**, **title**, and **genres**. |
-| `ratings.csv` | Contains **userId**, **movieId**, **rating**, and **timestamp** for **100,000 ratings**. |
-| `tags.csv`    | Contains user-generated **tags** for movies (e.g., "Action", "Drama"). |
-| `README`      | Dataset information provided by GroupLens. |
+| `movies.csv`  | Movie metadata (ID, title, genres). |
+| `ratings.csv` | User-movie ratings (userId, movieId, rating). |
+| `tags.csv`    | User-generated tags (e.g., "Action", "Drama"). |
+| `README`      | Dataset information. |
 
 ---
 
@@ -35,50 +38,48 @@ After extraction, the dataset files are located in the `ml-100k/` directory:
 ```plaintext
 movie-recommendation-system/
 │
-├── data/                           # Folder where the MovieLens dataset will be placed
+├── data/                           # Folder where the dataset is stored
 │   ├── ml-latest-small/            # Unzipped dataset folder
 │   │   ├── movies.csv              # Movie details (title, genres)
 │   │   ├── ratings.csv             # Ratings data (userId, movieId, rating, timestamp)
-│   │   ├── tags.csv       	    # User-generated tags
-│   │   ├── README.txt     	    # Dataset info         
+│   │   ├── tags.csv                # User-generated tags
+│   │   ├── README.txt              # Dataset info         
 │
-├── src/                   	    # Source code for the recommendation system
-│   ├── recommend.py       	    # Main script to generate movie recommendations
-│   ├── data_preprocessing.py 	    # Preprocessing script (loading, cleaning data)
-│   ├── collaborative_filtering.py  # User/Item-based CF implementations
-│   ├── svd_model.py       	    # SVD matrix factorization implementation
-│   └── evaluation.py               # RMSE evaluation and results
+├── src/                            # Source code for the recommendation system
+│   ├── app.py                      # Streamlit App script
+│   ├── data_preprocessing.py        # Preprocessing script (loading, cleaning data)
+│   ├── collaborative_filtering.py   # Item-based CF implementation
+│   ├── evaluation.py                # Evaluation metrics (RMSE, MAE)
 │
-├── requirements.txt                # Required Python libraries
-├── README.md              	    # Project details and instructions (this file)
-└── LICENSE                	    # MIT License
+├── requirements.txt                 # Required Python libraries
+├── README.md                        # Project details and instructions (this file)
+└── LICENSE                          # MIT License
 ```
 
 ---
 
 ## Future Enhancements
-- Hybrid Model – Combine collaborative and content-based filtering.
-- Deep Learning – Use Autoencoders or Transformers for better recommendations.
-- Web Interface – Deploy a Streamlit app for a better user experience.
-- API Deployment – Use Flask/FastAPI for REST API integration.
+- Hybrid Model – Combine collaborative and content-based filtering for improved accuracy.
+- Deep Learning – Implement neural networks (Autoencoders, Transformers) for enhanced recommendations.
+- API Deployment – Serve recommendations via a REST API using Flask/FastAPI.
+- Movie Posters & Trailers – Integrate metadata for a richer user experience.
 
 ___
 
 ## Installation & Setup
-1. Clone the Repository
-  git clone https://github.com/your-username/movie-recommendation-system.git  
-  cd movie-recommendation-system
-2. Install Dependencies
-  Ensure you have Python 3.8+ installed. Then, run:
-  pip install -r requirements.txt
-3. Run the Reccomendation System
-  python recommend.py
-4. Then, enter a movie name or user ID to recieve recommendations.
+1. Clone the Repository:
+    git clone https://github.com/smarder01/movie-recommendation-system.git
+    cd movie-recommendation-system
+2. Install Dependencies:
+    pip install -r requirements.txt
+3. Run the Streamlit App:
+    streamlit run src/app.py
 
-### Example Usage (Command-Line Interface)
-$ python recommend.py  
-Enter a movie name: Inception  
-Recommended movies: Interstellar, The Dark Knight, Memento  
+### Example Usage (Streamlit App)
+	1.	Select a movie from the dropdown menu.
+	2.	Choose a recommendation method (Item-Based or SVD).
+	3.	Click “Get Recommendations” to see personalized suggestions.
+	4.	Try the “Surprise Me” button for random movie suggestions!
 
 ---
 
@@ -94,6 +95,6 @@ This project is open-source and licensed under the MIT License.
 
 ---
 
-## 📖 Citation  
+## Citation  
 
 F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History and Context. ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4: 19:1–19:19. <https://doi.org/10.1145/2827872>
