@@ -7,7 +7,7 @@ A simple **Movie Recommendation System** built using Collaborative Filtering and
 
 ---
 
-## 🚀 Features  
+## Features  
 - **User-Based Collaborative Filtering** – Recommends movies based on similar users.  
 - **Item-Based Collaborative Filtering** – Recommends movies similar to a given movie.  
 - **Matrix Factorization (SVD)** – Uses dimensionality reduction to predict ratings.  
@@ -16,10 +16,10 @@ A simple **Movie Recommendation System** built using Collaborative Filtering and
 
 ---
 
-## 🎬 Dataset: MovieLens 100K  
+## Dataset: MovieLens 100K  
 This project uses the **MovieLens 100K dataset** provided by [GroupLens](https://grouplens.org/datasets/movielens/100k/). It contains **100,000 ratings** from **943 users** on **1,682 movies**, with ratings ranging from **1 to 5 stars**.  
 
-### 📂 Dataset Files & Structure  
+### Dataset Files & Structure  
 After extraction, the dataset files are located in the `ml-100k/` directory:  
 
 | File           | Description |
@@ -31,7 +31,7 @@ After extraction, the dataset files are located in the `ml-100k/` directory:
 
 ---
 
-## 📁 Project Structure  
+## Project Structure  
 ```plaintext
 movie-recommendation-system/
 │
